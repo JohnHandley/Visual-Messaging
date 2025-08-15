@@ -1,22 +1,55 @@
-import { useCallback } from "react";
-import { message } from "antd";
-import { useRete } from "rete-react-plugin";
-import { createEditor } from "./editor";
+import {
+  ReactFlow,
+  Background,
+  Controls,
+  MiniMap,
+} from '@xyflow/react';
+import { useShallow } from 'zustand/react/shallow';
+
+import '@xyflow/react/dist/style.css';
+
+import { edgeTypes } from './graph/ui/edges';
+import { nodeTypes } from './graph/ui/nodes';
+
+import useStore, { AppState } from './state';
+
+const selector = (state: AppState) => ({
+  nodes: state.nodes,
+  edges: state.edges,
+  connectionLineStyle: state.connectionLineStyle,
+  onNodesChange: state.onNodesChange,
+  onEdgesChange: state.onEdgesChange,
+  onConnect: state.onConnect,
+  onConnectStart: state.onConnectStart,
+});
 
 export default function App() {
-  const [messageApi, contextHolder] = message.useMessage();
-  const create = useCallback(
-    (el: HTMLElement) => {
-      return createEditor(el, (text, type) => messageApi[type](text));
-    },
-    [messageApi]
-  );
-  const [ref] = useRete(create);
+  const {
+    nodes,
+    edges,
+    connectionLineStyle,
+    onNodesChange,
+    onEdgesChange,
+    onConnect,
+    onConnectStart
+  } = useStore(useShallow(selector));
 
   return (
-    <div className="App">
-      {contextHolder}
-      <div ref={ref} style={{ height: "100vh", width: "100vw" }}></div>
-    </div>
+    <ReactFlow
+      nodes={nodes}
+      nodeTypes={nodeTypes}
+      onNodesChange={onNodesChange}
+      edges={edges}
+      edgeTypes={edgeTypes}
+      onEdgesChange={onEdgesChange}
+      onConnect={onConnect}
+      onConnectStart={onConnectStart}
+      connectionLineStyle={connectionLineStyle}
+      fitView
+    >
+      <Background />
+      <MiniMap />
+      <Controls />
+    </ReactFlow>
   );
 }

@@ -1,7 +1,7 @@
 {
   "name": "retejs-v2-chatbot-programming",
   "version": "1.0.0",
-  "description": null,
+  "description": "",
   "keywords": [
     "rete.js",
     "rete.js 2"
@@ -15,14 +15,14 @@
     "react-dom": "18.2.0",
     "react-markdown": "8.0.6",
     "react-scripts": "4.0.3",
-    "rete": "2.0.2",
-    "rete-area-plugin": "2.0.1",
-    "rete-auto-arrange-plugin": "2.0.0",
-    "rete-connection-plugin": "2.0.0",
-    "rete-context-menu-plugin": "2.0.0",
-    "rete-engine": "2.0.0",
-    "rete-react-plugin": "2.0.3",
-    "rete-render-utils": "2.0.1",
+    "rete": "2.0.3",
+    "rete-area-plugin": "2.0.4",
+    "rete-auto-arrange-plugin": "2.0.1",
+    "rete-connection-plugin": "2.0.4",
+    "rete-context-menu-plugin": "2.0.3",
+    "rete-engine": "2.0.1",
+    "rete-react-plugin": "2.0.5",
+    "rete-render-utils": "2.0.2",
     "styled-components": "5.3.6",
     "unist-util-visit": "4.1.2",
     "web-worker": "1.2.0"
