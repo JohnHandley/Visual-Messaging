@@ -1,47 +1,40 @@
 {
-  "name": "retejs-v2-chatbot-programming",
-  "version": "1.0.0",
-  "description": "",
-  "keywords": [
-    "rete.js",
-    "rete.js 2"
-  ],
-  "main": "src/index.tsx",
-  "dependencies": {
-    "@types/styled-components": "5.1.26",
-    "antd": "5.3.2",
-    "elkjs": "0.8.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-markdown": "8.0.6",
-    "react-scripts": "4.0.3",
-    "rete": "2.0.3",
-    "rete-area-plugin": "2.0.4",
-    "rete-auto-arrange-plugin": "2.0.1",
-    "rete-connection-plugin": "2.0.4",
-    "rete-context-menu-plugin": "2.0.3",
-    "rete-engine": "2.0.1",
-    "rete-react-plugin": "2.0.5",
-    "rete-render-utils": "2.0.2",
-    "styled-components": "5.3.6",
-    "unist-util-visit": "4.1.2",
-    "web-worker": "1.2.0"
-  },
-  "devDependencies": {
-    "@types/react": "18.0.25",
-    "@types/react-dom": "18.0.9",
-    "typescript": "4.4.2"
-  },
+  "name": "vite-react-flow-template",
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "liquid": "ts-node ./src/graph/liquid",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "dependencies": {
+    "@xyflow/react": "^12.1.0",
+    "classnames": "^2.5.1",
+    "liquidjs": "^10.16.7",
+    "path": "^0.12.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rete": "^2.0.3",
+    "rete-area-plugin": "^2.0.4",
+    "rete-connection-plugin": "^2.0.4",
+    "rete-engine": "^2.0.1",
+    "rete-react-plugin": "^2.0.5",
+    "rete-render-utils": "^2.0.2",
+    "zustand": "^4.5.5"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.2.53",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12"
+  }
 }
